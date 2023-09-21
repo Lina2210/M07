@@ -1,0 +1,35 @@
+TABLERO BATALLA NAVAL
+
+<h2>BATALLA NAVAL</h2>
+<table class="ej">
+<?php
+    $N = 10;
+    
+    for ($i = 0; $i <= $N; $i++) {
+        echo "<tr>\n";
+        if($i == 0 ){
+            echo "\t<td>" . "  " . "</td>\n";
+        }
+        else {
+            echo "\t<td>" . $i . "</td>\n";
+        }
+        
+        
+        for ($j = "A"; $j <= "J"; $j++) {
+            
+            
+            
+            if($j != 0 && $i != 0 ){
+                echo "\t<td>" . "  " . "</td>\n";
+            }
+            
+            else {
+                echo "\t<td>" . $j . "</td>\n";
+            }
+        }
+        echo "\t</tr>\n";
+        
+    }   
+    ?>
+    
+</table>

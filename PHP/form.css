@@ -1,0 +1,8 @@
+table {
+    border-collapse: collapse;
+    padding-right: 2px;
+}
+
+td::content(0){
+    color:transparent;
+}
