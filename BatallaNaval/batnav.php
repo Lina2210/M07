@@ -43,22 +43,77 @@
     
     print $position;
 
+    $fragata = [0, 0];
+    $submari = array(array(0, 0), array(0, 0));
+    $destructor = array(array(0, 0), array(0, 0), array(0, 0));
+    $portaavions = array(array(0, 0), array(0, 0), array(0, 0), array(0, 0));
+
+    $barcos = array("fragata", "submari", "destructor", "portaavions");
+    $indiceb = array_rand($barcos);
+    $barco = $barcos[$indiceb];
+    print $barco;
+
+    if ($position == "horizontal"){
+        $position1=mt_rand(1, 10);
+        $position2=mt_rand(1, 10);
+        $fragata[0] = $position1;
+        $fragata[1] = $position2;
+    }
+
+    
+
     $N = 10;
+
     echo "<tr>\n";
-    echo "\t<td></td>\n"; 
-    for ($i = 1; $i <= $N; $i++) {
-        echo "\t<td>" . $i . "</td>\n"; 
-    }
-    echo "</tr>\n";
+    for ($i = 0; $i <= $N; $i++) {
+        for ($j = 1; $j <= $N; $j++) {
+            if($j == 1){
+                echo "\t<td>" . $i . "</td>\n"; 
+            }
 
-    for ($j = "A"; $j <= "J"; $j++) {
-        echo "<tr>\n";
-        echo "\t<td>" . $j . "</td>\n"; // Letras en la primera columna
-        for ($i = 1; $i <= $N; $i++) {
-            echo "\t<td>  </td>\n"; // Celdas vacías en el resto de la tabla
+            if($i == 0){
+                echo "\t<td>" . $j . "</td>\n";
+            }elseif(($i == 2 && $j == 5 ) || ($i == 2 && $j == 6 )){
+                echo "\t<td>" . " x" . "</td>\n";
+            }
+            
+            else{
+                echo "\t<td>" . " " . "</td>\n";
+            }
+            
+            
         }
-        echo "</tr>\n";
+    echo "</tr>\n";
     }
+    ?>  
+</table>
+    
 
-    ?>
+<h2>Ejercicio 4</h2>
+<table class="ej">
+<?php
+    $N = 7;  
+    
+    echo "<tr>\n";
+    for ($i = 0; $i <= $N; $i++) {
+        for ($j = 1; $j <= $N; $j++) {
+            if($j == 1){
+                echo "\t<td>" . $i . "</td>\n"; 
+            }
+
+            if($i == 0){
+                echo "\t<td>" . $j . "</td>\n";
+            }elseif($i == 5 && $j ==2){
+                echo "\t<td>" . " x" . "</td>\n";
+            }
+            
+            else{
+                echo "\t<td>" . " " . "</td>\n";
+            }
+            
+            
+        }
+    echo "</tr>\n";
+    }
+    ?>  
 </table>
